@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/upload.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Test Task</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li>
+      <a type="button"  data-toggle="modal" data-target="#CreateProject">Create Project</a><br /></a>
+    </li>
+      <li>
+      <a type="button"  data-toggle="modal" data-target="#TodoList">Create TodoList</a><br /></a>
+    </li>
+      <li>
+      <a type="button"  data-toggle="modal" data-target="#Music">Music</a><br /></a>
+    </li>
+    </ul>
+  </div>
+</nav>
+<!--/ ----------------------------------------------------------CreateProject------------------------------------------------- -->
+<div class="container">
+    <div class="modal fade" id="CreateProject" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Project</h4>
+                </div>
+                <div class="modal-body">
+                        <form method="post" enctype="multipart/form-data" action="/Create_roject/">
+                            {% csrf_token %}
+                      <label for="Project_name"> Name:</label>
+                      <input type="text" class="form-control"id="name" name="name" >
+                      <label for="Description">Description:</label>
+                      <input type="text" class="form-control" id="Descriptions" name="descriptions">
+                      <button style="margin-top:20px" type="submit" class="btn btn-labeled btn-primary">Create</button>
+                        </form> 
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--/ ----------------------------------------------------------Music------------------------------------------------- -->
+
+
+<div class="container">
+    <div class="modal fade" id="Music" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Music Upload</h4>
+                </div>
+                <div class="modal-body">
+                     <form method="post" enctype="multipart/form-data" action="/Upload_Files/">
+                            {% csrf_token %}
+                        <div style="float:left;width:300px;margin-right:20px">
+                            <input type="text" placeholder="Title" class="form-control"id="name" name="title" >
+                            </div>
+                             <div style="float:left;margin-right:20px" class="btn btn-default file-preview-input"> <span class="glyphicon glyphicon-folder-open"></span> <span class="file-preview-input-title">Browse</span>
+                             <input type="file" name="myfile"/>
+                             </div>
+                             <div>
+                           <button class="btn btn-labeled btn-primary glyphicon glyphicon-upload" type="submit">Upload</button>                             
+                        </div>
+                     </form>                          
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--/ ----------------------------------------------------------TodoList------------------------------------------------- -->
+
+
+<div class="container">
+    <div class="modal fade" id="TodoList" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Todo List</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                     <div class="col-sm-12">
+                         <form method="post" enctype="multipart/form-data" action="/Create_ToDo/">
+                             {% csrf_token %}
+                       <label for="Project_name"> Name:</label>
+                       <input type="text" class="form-control"id="name" name="name" >
+                       <label for="Description">Description:</label>
+                       <input type="text" class="form-control" id="Descriptions" name="descriptions">
+                       <button style="margin-top:20px" type="submit" class="btn btn-labeled btn-primary">Create</button>
+                         </form>
+                     </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+

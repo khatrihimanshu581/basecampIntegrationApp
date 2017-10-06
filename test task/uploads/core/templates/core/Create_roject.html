@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>alert('Your Project has been Created')</script>
+
+
+
+
+<div id="MainDiv" class="container-fluid">
+  <div class="row shadow" style="box-shadow:0px 0px 5px 0px">
+    <div class="col-sm-6">
+            <h1>Your Project Detail</h1>
+        <div class="col-sm-12 shadow d-inline-block" style="box-shadow:0px 0px 5px 0px">
+                <div><p>{{Project_Detail}}</p></div>
+        </div>
+            
+            <p><a href="{% url 'home' %}">Return to home</a></p>
+    </div>
+  </div>
+</div>
