@@ -4,9 +4,6 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 import requests
 import json
-from django import forms
-from uploads.core.models import Document
-from uploads.core.forms import DocumentForm
 from django.http import HttpResponse
 
 #-----------------------------------------------------Home Page--------------------------------------------------------------------------------------

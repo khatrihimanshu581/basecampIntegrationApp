@@ -22,7 +22,7 @@
         },
         "sources": [
             {
-                "url": "https://pypi.python.org/simple",
+                "url": "https://github.com/khatrihimanshu581/basecampIntegrationApp.git",
                 "verify_ssl": true
             }
         ]
